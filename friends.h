@@ -1,4 +1,5 @@
 
+
  #include <time.h>
 
 #define MAX_NAME 32     // Max username and profile_pic filename lengths
@@ -37,8 +38,7 @@ int create_user(const char *name, User **user_ptr_add);
  * Return a pointer to the user with this name in
  * the list starting with head. Return NULL if no such user exists.
  *
- * NOTE: You'll likely need to cast a (const User *) to a (User *)
- * to satisfy the prototype without warnings.
+ * 
  */
 User *find_user(const char *name, const User *head);
 
@@ -90,8 +90,7 @@ char * print_user(const User *user);
  *
  * Use the 'time' function to store the current time.
  *
- * 'contents' is a pointer to heap-allocated memory - you do not need
- * to allocate more memory to store the contents of the post.
+ 
  *
  * Return:
  *   - 0 on success
@@ -100,23 +99,6 @@ char * print_user(const User *user);
  */
 int make_post(const User *author, User *target, char *contents);
 
-/**
- Funtion to bind a create a listening socket, bind it to an address, and
- listen.
- **/
 void bindandlisten();
 
-/*Search the first inbuf characters of buf for a network newline ("\r\n").
- Return the location of the '\r' if the network newline is found,
- or -1 otherwise.
- Definitely do not use strchr or any other string function in here. (Why not?)
- */
 int find_network_newline(const char *buf, int inbuf) ;
-
-/**
- * check if the two users are already friends.
- * return 1 if true, 0 if false.
- */
-int already_friends(User u1, User u2);
-
-
